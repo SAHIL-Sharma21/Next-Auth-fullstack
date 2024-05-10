@@ -1,7 +1,6 @@
 //importing db connect method as in next js we have to conect to db in every routes its works different then core bwckend
 import {connectDB} from '@/dbConfig/dbConfig'
 import User from '@/models/userModel'//importing user from model
-import mongoose from 'mongoose';
 import {NextRequest, NextResponse} from 'next/server' // for making request in next js we import two method nextResponse and nextRequest
 import bcryptjs from 'bcryptjs';
 import {sendEmail} from '@/helpers/mailHelper'
