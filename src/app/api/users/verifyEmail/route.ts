@@ -7,7 +7,7 @@ import {NextRequest, NextResponse} from 'next/server'
 
 
 
-//sbse phele datavbase hi connect krne hai
+
 connectDB();
 
 export async function POST(request: NextRequest) {

@@ -16,14 +16,18 @@ export const sendEmail = async ({email, emailType, userId}: any) => {
         if(emailType === "VERIFY"){
             //if emailType is verify then we will find the user and save the verify token in database
             await User.findByIdAndUpdate(userId, {
-              verifyToken: hashedToken,
-              verifyTokenExpiry: Date.now() + 3600000, //expires in 1 hour fromm the date which is saved.
+              $set: {
+                verifyToken: hashedToken,
+                verifyTokenExpiry: Date.now() + 3600000, //expires in 1 hour fromm the date which is saved.
+              }
             });
         } else if(emailType === "RESET"){
             //if we want to reset the password then we will do the same task but for forgotPassword Token
             await User.findByIdAndUpdate(userId, {
-              forgotPasswordToken: hashedToken,
-              forgotPasswordTokenExpiry: Date.now() + 3600000, //expires in 1 hour fromm the date which is saved.
+              $set: {
+                forgotPasswordToken: hashedToken,
+                forgotPasswordTokenExpiry: Date.now() + 3600000, //expires in 1 hour fromm the date which is saved.
+              }
             });
         }
 

@@ -7,7 +7,7 @@ import {NextRequest, NextResponse} from 'next/server';
 connectDB();
 
 //making logging out a get request
-export async function GET(request:NextRequest) {
+export async function GET() {
     try {
         
         const response = NextResponse.json({
