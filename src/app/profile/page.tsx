@@ -1,10 +1,9 @@
 //user profile
 'use client'
 
-function page() {
+export default function ProfilePage() {
   return (
     <div>User profile</div>
   )
 }
 
-export default page
