@@ -70,7 +70,9 @@ export default function LoginPage() {
         </div>
 
         <button className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600' 
-        onClick={onLogin}>
+        onClick={onLogin}
+        disabled={buttonDisable}
+        >
           {buttonDisable ? "please fill the login form": "Login"}
         </button>
         <Link href={"/signup"}>Visit Signup</Link>
